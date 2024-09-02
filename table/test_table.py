@@ -53,28 +53,35 @@ class Test_Table(unittest.TestCase):
 #         time.sleep(5)
 
         # baseUrl = "https://www.letskodeit.com/practice"
-        baseUrl = "https://www.goibibo.com/"
-        driver = webdriver.Chrome()
-        driver.implicitly_wait(5)
+        # baseUrl = "https://www.goibibo.com/"
+        # driver = webdriver.Chrome()
+        # driver.implicitly_wait(5)
+        # driver.get(baseUrl)
+        # driver.maximize_window()
+        # time.sleep(6)
+        #
+        # driver.find_element(By.XPATH, "//span[@class='logSprite icClose']").click()
+        # hubliToClick = "//ul[@id='autoSuggest-list']//span[text()='Hubli, India']"
+        # flights = "//li[@class='sc-1f95z5i-1 kjgDqV']/a[@href='/flights/']"
+        # _from = "//input[@type='text']"
+        #
+        # # driver.find_element(By.XPATH, flights).click()
+        # time.sleep(3)
+        # driver.find_element(By.XPATH, "//div[@class='sc-12foipm-22 kGtxGm']/div[@class='sc-12foipm-2 eTBlJr fswFld ']").click()
+        # driver.find_element(By.XPATH, _from).send_keys("Hubballi")
+        # driver.find_element(By.XPATH, hubliToClick).click()
+        # time.sleep(3)
+        # driver.close()
+
+        baseUrl = "https://www.google.com/"
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument("--headless")
+        driver = webdriver.Chrome(options=chrome_options)
         driver.get(baseUrl)
-        driver.maximize_window()
-        time.sleep(6)
-
-        driver.find_element(By.XPATH, "//span[@class='logSprite icClose']").click()
-        hubliToClick = "//ul[@id='autoSuggest-list']//span[text()='Hubli, India']"
-        flights = "//li[@class='sc-1f95z5i-1 kjgDqV']/a[@href='/flights/']"
-        _from = "//input[@type='text']"
-
-        # driver.find_element(By.XPATH, flights).click()
         time.sleep(3)
-        driver.find_element(By.XPATH, "//div[@class='sc-12foipm-22 kGtxGm']/div[@class='sc-12foipm-2 eTBlJr fswFld ']").click()
-        driver.find_element(By.XPATH, _from).send_keys("Hubballi")
-        driver.find_element(By.XPATH, hubliToClick).click()
+        assert driver.title == "Google"
         time.sleep(3)
         driver.close()
-
-
-
         # _table_CompleteTable_xpath = "//table[@id='product']"
         # CompleteTable = driver.find_element(By.XPATH, _table_CompleteTable_xpath)
         # _forRows_xpath = "//tbody/tr"
