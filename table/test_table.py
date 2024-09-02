@@ -79,6 +79,7 @@ class Test_Table(unittest.TestCase):
         driver = webdriver.Chrome(options=chrome_options)
         driver.get(baseUrl)
         time.sleep(3)
+        print(driver.title)
         assert driver.title == "Google"
         time.sleep(3)
         driver.close()
