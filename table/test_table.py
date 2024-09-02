@@ -53,7 +53,7 @@ class Test_Table(unittest.TestCase):
 
         # baseUrl = "https://www.letskodeit.com/practice"
         baseUrl = "https://www.goibibo.com/"
-        driver = webdriver.Firefox()
+        driver = webdriver.Chrome()
         driver.implicitly_wait(5)
         driver.get(baseUrl)
         driver.maximize_window()
