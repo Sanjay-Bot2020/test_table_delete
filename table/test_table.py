@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pytest
 import time
+from selenium.webdriver.chrome.options import Options
 
 class Test_Table(unittest.TestCase):
 
@@ -57,19 +58,19 @@ class Test_Table(unittest.TestCase):
         driver.implicitly_wait(5)
         driver.get(baseUrl)
         driver.maximize_window()
-        time.sleep(5)
+        time.sleep(6)
 
         driver.find_element(By.XPATH, "//span[@class='logSprite icClose']").click()
         hubliToClick = "//ul[@id='autoSuggest-list']//span[text()='Hubli, India']"
         flights = "//li[@class='sc-1f95z5i-1 kjgDqV']/a[@href='/flights/']"
         _from = "//input[@type='text']"
 
-        driver.find_element(By.XPATH, flights).click()
+        # driver.find_element(By.XPATH, flights).click()
         time.sleep(3)
         driver.find_element(By.XPATH, "//div[@class='sc-12foipm-22 kGtxGm']/div[@class='sc-12foipm-2 eTBlJr fswFld ']").click()
         driver.find_element(By.XPATH, _from).send_keys("Hubballi")
         driver.find_element(By.XPATH, hubliToClick).click()
-        time.sleep(5)
+        time.sleep(3)
         driver.close()
 
 
