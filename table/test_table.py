@@ -9,12 +9,10 @@ class Test_Table():
         def test_table(self, browsers):
 
                 baseurl = "https://www.google.com/"
-
                 if browsers == 1:
                         chrome_options = webdriver.ChromeOptions()
                         chrome_options.add_argument("--incognito")
                         driver = webdriver.Chrome(options=chrome_options)
-
                 elif browsers == 2:
                         ff_options = webdriver.FirefoxOptions()
                         ff_options.add_argument("--headless")
