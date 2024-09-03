@@ -24,7 +24,7 @@ class Test_Table():
                 # time.sleep(3)
                 # driver.close()
 
-                string = input("Enter a String: ")
+                string = "Underwear"
                 revstring = ""
 
                 length = len(string)
